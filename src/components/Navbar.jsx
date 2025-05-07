@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import LogoBasico from '../assets/LogoBaseWeb.svg';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,19 +21,21 @@ function Navbar() {
   const isActive = (path) => {
     return location.pathname === path
       ? 'text-blue-600 font-medium'
-      : 'text-gray-700 hover:text-blue-600';
+      : 'text-gray-700 hover:text-blue-600 dark:text-white';
   };
 
   return (
-    <nav className="bg-white shadow-sm py-4 sticky top-0 z-10">
+    <nav className="bg-white shadow-sm py-4 sticky top-0 z-10 dark:bg-zinc-800 text-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center">
-          <Link to="/" className="text-2xl font-bold text-blue-600">
-            MiPortafolio
+          {/* Logo y nombre como enlace */}
+          <Link to="/" className="flex items-center">
+            <h1 className="text-2xl font-bold">Portafolio</h1>
+            <img src={LogoBasico} alt="Logo" className="h-10 w-20 mr-2" />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          {/* Navegación de escritorio */}
+          <div className="hidden md:flex space-x-8 ">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -44,18 +47,18 @@ function Navbar() {
             ))}
           </div>
 
-          {/* Mobile menu button */}
+          {/* Botón menú móvil */}
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className="text-gray-700 hover:text-blue-600 focus:outline-none"
+              className="text-gray-700 dark:text-white hover:text-blue-600 focus:outline-none "
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Menú móvil desplegable */}
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-2">
             <div className="flex flex-col space-y-4">

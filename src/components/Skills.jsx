@@ -40,7 +40,7 @@ const Skills = () => {
                 {category.skills.map((skill, skillIndex) => (
                   <div
                     key={skillIndex}
-                    className="bg-gray-100 text-gray-800 px-3 py-2 rounded-md text-sm font-medium"
+                    className="bg-gray-100 text-gray-800  px-3 py-2 rounded-md text-sm font-medium"
                   >
                     {skill}
                   </div>
