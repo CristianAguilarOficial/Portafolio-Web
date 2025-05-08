@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import LogoBasico from '../assets/LogoBaseWeb.svg';
+import ButtonTheme from './ButtonTheme';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,11 +22,11 @@ function Navbar() {
   const isActive = (path) => {
     return location.pathname === path
       ? 'text-blue-600 font-medium'
-      : 'text-gray-700 hover:text-blue-600 dark:text-white';
+      : 'text-gray-100 hover:text-gray-600 dark:text-white';
   };
 
   return (
-    <nav className="bg-white shadow-sm py-4 sticky top-0 z-10 dark:bg-zinc-800 text-white">
+    <nav className="bg-gray-800 text-white shadow-sm py-4 sticky top-0 z-10  dark:bg-gray-900 dark:text-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Logo y nombre como enlace */}
@@ -45,13 +46,14 @@ function Navbar() {
                 {link.name}
               </Link>
             ))}
+            <ButtonTheme />
           </div>
 
           {/* Botón menú móvil */}
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className="text-gray-700 dark:text-white hover:text-blue-600 focus:outline-none "
+              className="text-gray-100 dark:text-white hover:text-blue-600 focus:outline-none "
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -74,6 +76,7 @@ function Navbar() {
                   {link.name}
                 </Link>
               ))}
+              <ButtonTheme />
             </div>
           </div>
         )}

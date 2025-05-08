@@ -2,6 +2,8 @@ import ProjectCard from '../components/ProjectCard';
 import tasKimg from '../assets/img/TaskManager.png';
 import invimg from '../assets/img/IventarioManager.png';
 import Encimg from '../assets/img/Encriptador.png';
+import { motion } from 'framer-motion';
+import { fadeInUp } from '../styles/Animaciones';
 
 function Projects() {
   const projects = [
@@ -48,11 +50,16 @@ function Projects() {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-6 py-16">
-      <h1 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800 dark:text-white ">
+    <motion.div
+      variants={fadeInUp}
+      initial="hidden"
+      animate="visible"
+      className="max-w-6xl mx-auto px-6 py-16"
+    >
+      <h1 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-950 dark:text-white ">
         Mis Proyectos
       </h1>
-      <p className="text-gray-600 dark:text-white text-center max-w-2xl mx-auto mb-12">
+      <p className="text-gray-650 dark:text-white text-center max-w-2xl mx-auto mb-12">
         Aquí puedes encontrar algunos de los proyectos en los que he trabajado.
         Cada uno representa diferentes habilidades y tecnologías.
       </p>
@@ -62,7 +69,7 @@ function Projects() {
           <ProjectCard key={project.id} {...project} />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
-import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { GitHub, LinkedIn } from '../components/icon/IconRed';
+import { motion } from 'framer-motion';
+import { fadeInUp } from '../styles/Animaciones';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -26,20 +28,17 @@ function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form data submitted:', formData);
-    setSubmitted(true);
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    setTimeout(() => setSubmitted(false), 3000);
-  };
-
   return (
-    <div className="max-w-6xl mx-auto px-6 py-16">
+    <motion.div
+      variants={fadeInUp}
+      initial="hidden"
+      animate="visible"
+      className="max-w-6xl mx-auto px-6 py-16"
+    >
       <h1 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800 dark:text-zinc-200">
         Contáctame
       </h1>
-      <p className="text-gray-600 dark:text-zinc-200 text-center max-w-2xl mx-auto mb-12">
+      <p className="text-gray-950 dark:text-zinc-200 text-center max-w-2xl mx-auto mb-12">
         ¿Tienes alguna pregunta o propuesta de proyecto? No dudes en
         contactarme.
       </p>
@@ -47,7 +46,7 @@ function Contact() {
       <div className="flex flex-col lg:flex-row gap-12">
         {/* Contact Info */}
         <div className="lg:w-1/3">
-          <h2 className="text-xl font-bold mb-6 text-gray-800 dark:text-zinc-200">
+          <h2 className="text-xl font-bold mb-6 text-gray-950 dark:text-zinc-200">
             Información de Contacto
           </h2>
 
@@ -57,12 +56,12 @@ function Contact() {
                 <Mail size={20} className="text-blue-600" />
               </div>
               <div className="ml-4">
-                <h3 className="text-gray-800 dark:text-zinc-200 font-medium">
+                <h3 className="text-gray-950 dark:text-zinc-200 font-medium">
                   Email
                 </h3>
                 <p
                   onClick={handleCopy}
-                  className="text-gray-600  dark:text-zinc-200 cursor-pointer hover:text-blue-600 transition select-none"
+                  className="text-gray-800  dark:text-zinc-200 cursor-pointer hover:text-blue-600 transition select-none"
                   title="Haz clic para copiar"
                 >
                   {copied ? 'Copiado ✅' : email}
@@ -75,10 +74,10 @@ function Contact() {
                 <Phone size={20} className="text-blue-600" />
               </div>
               <div className="ml-4">
-                <h3 className="text-gray-800  dark:text-zinc-200 font-medium">
+                <h3 className="text-gray-950  dark:text-zinc-200 font-medium">
                   Teléfono
                 </h3>
-                <p className="text-gray-600 dark:text-zinc-200">
+                <p className="text-gray-800 dark:text-zinc-200">
                   +57 314 283 2878
                 </p>
               </div>
@@ -89,10 +88,10 @@ function Contact() {
                 <MapPin size={20} className="text-blue-600" />
               </div>
               <div className="ml-4">
-                <h3 className="text-gray-800  dark:text-zinc-200 font-medium">
+                <h3 className="text-gray-950  dark:text-zinc-200 font-medium">
                   Ubicación
                 </h3>
-                <p className="text-gray-600 dark:text-zinc-200">
+                <p className="text-gray-800 dark:text-zinc-200">
                   Casanare, Colombia
                 </p>
               </div>
@@ -100,31 +99,12 @@ function Contact() {
           </div>
 
           <div className="mt-10">
-            <h3 className="text-gray-800 dark:text-blue-500 font-medium mb-4">
+            <h3 className="text-gray-750 dark:text-blue-500 font-medium mb-4">
               Sígueme en:
             </h3>
             <div className="flex space-x-4">
-              <a
-                href="https://www.linkedin.com/in/cristianaguilaroficial/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                <FaLinkedin
-                  size={20}
-                  className="text-gray-800 dark:text-white hover:text-blue-600"
-                />
-              </a>
-              <a
-                target="_blank"
-                href="https://github.com/CristianAguilarOficial"
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                <FaGithub
-                  size={20}
-                  className="text-gray-800 dark:text-zinc-200 hover:text-white"
-                />
-              </a>
+              <LinkedIn />
+              <GitHub />
             </div>
           </div>
         </div>
@@ -136,20 +116,24 @@ function Contact() {
               <div className="bg-green-100 p-4 rounded-full inline-flex items-center justify-center mb-4">
                 <Send size={24} className="text-green-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">
+              <h3 className="text-xl font-bold text-gray-950 mb-2">
                 ¡Mensaje enviado!
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-800">
                 Gracias por contactarme. Te responderé a la brevedad posible.
               </p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form
+              action="https://formspree.io/f/xanojorl"
+              method="POST"
+              className="space-y-6"
+            >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-gray-700 dark:text-zinc-200 font-medium mb-2"
+                    className="block text-black dark:text-zinc-200 font-medium mb-2"
                   >
                     Nombre
                   </label>
@@ -160,14 +144,14 @@ function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:placeholder:text-white"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:placeholder:text-white dark:text-zinc-200"
                     placeholder="Tu nombre"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-gray-700 dark:text-zinc-200 font-medium mb-2"
+                    className="block text-black dark:text-zinc-200 font-medium mb-2"
                   >
                     Email
                   </label>
@@ -178,7 +162,7 @@ function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:placeholder:text-white"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:placeholder:text-white dark:text-zinc-200"
                     placeholder="tu@email.com"
                   />
                 </div>
@@ -187,7 +171,7 @@ function Contact() {
               <div>
                 <label
                   htmlFor="subject"
-                  className="block text-gray-700 dark:text-zinc-200 font-medium mb-2"
+                  className="block text-black dark:text-zinc-200 font-medium mb-2"
                 >
                   Asunto
                 </label>
@@ -198,7 +182,7 @@ function Contact() {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:placeholder:text-white"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:placeholder:text-white dark:text-zinc-200"
                   placeholder="Asunto del mensaje"
                 />
               </div>
@@ -206,7 +190,7 @@ function Contact() {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-gray-700 dark:text-zinc-200 font-medium mb-2"
+                  className="block text-black dark:text-zinc-200 font-medium mb-2"
                 >
                   Mensaje
                 </label>
@@ -217,7 +201,7 @@ function Contact() {
                   onChange={handleChange}
                   required
                   rows="6"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:placeholder:text-white"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:placeholder:text-white dark:text-zinc-200"
                   placeholder="Escribe tu mensaje aquí..."
                 ></textarea>
               </div>
@@ -233,7 +217,7 @@ function Contact() {
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
