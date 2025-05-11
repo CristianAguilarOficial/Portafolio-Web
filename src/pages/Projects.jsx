@@ -4,7 +4,7 @@ import invimg from '../assets/img/IventarioManager.png';
 import Encimg from '../assets/img/Encriptador.png';
 import { motion } from 'framer-motion';
 import { fadeInUp } from '../styles/Animaciones';
-
+import BannerSinBackend from '../components/BannerSinBackend';
 function Projects() {
   const projects = [
     {
@@ -50,26 +50,29 @@ function Projects() {
   ];
 
   return (
-    <motion.div
-      variants={fadeInUp}
-      initial="hidden"
-      animate="visible"
-      className="max-w-6xl mx-auto px-6 py-16"
-    >
-      <h1 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-950 dark:text-white ">
-        Mis Proyectos
-      </h1>
-      <p className="text-gray-650 dark:text-white text-center max-w-2xl mx-auto mb-12">
-        Aquí puedes encontrar algunos de los proyectos en los que he trabajado.
-        Cada uno representa diferentes habilidades y tecnologías.
-      </p>
+    <>
+      <BannerSinBackend mensaje="Algunos proyectos no tiene imágenes ni sitios son API" />
+      <motion.div
+        variants={fadeInUp}
+        initial="hidden"
+        animate="visible"
+        className="max-w-6xl mx-auto px-6 py-16"
+      >
+        <h1 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-950 dark:text-white ">
+          Mis Proyectos
+        </h1>
+        <p className="text-gray-650 dark:text-white text-center max-w-2xl mx-auto mb-12">
+          Aquí puedes encontrar algunos de los proyectos en los que he
+          trabajado. Cada uno representa diferentes habilidades y tecnologías.
+        </p>
 
-      <div className="grid grid-cols-1    md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project) => (
-          <ProjectCard key={project.id} {...project} />
-        ))}
-      </div>
-    </motion.div>
+        <div className="grid grid-cols-1    md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project) => (
+            <ProjectCard key={project.id} {...project} />
+          ))}
+        </div>
+      </motion.div>
+    </>
   );
 }
 

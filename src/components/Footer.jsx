@@ -27,6 +27,9 @@ function Footer() {
               Hecho con <FaHeart size={16} className="mx-1 text-blue-600" /> en{' '}
               {currentYear}
             </p>
+            <p className="text-gray-400 text-sm flex items-center">
+              ultima actualización: 10-05-2025
+            </p>
           </div>
         </div>
       </div>

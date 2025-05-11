@@ -20,7 +20,7 @@ function ProjectCard({ title, description, image, tags, demoUrl, codeUrl }) {
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full dark:bg-zinc-750 dark:text-zinc-50 "
+              className="bg-blue-300 dark:bg-zinc-700 text-blue-700 text-xs px-3 py-1 rounded-full dark:bg-zinc-750 dark:text-zinc-50 "
             >
               {tag}
             </span>
