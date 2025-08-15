@@ -4,7 +4,9 @@ import BannerSinBackend from '../components/BannerSinBackend';
 
 function Home() {
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
+      {' '}
+      {/* min-h-screen para empujar el footer */}
       <BannerSinBackend mensaje="CV no esta disponible por ahora por información personal " />
       <section className="py-20 px-6 max-w-5xl mx-auto">
         <motion.div
@@ -63,7 +65,7 @@ function Home() {
           </div>
         </motion.div>
       </section>
-    </>
+    </div>
   );
 }
 

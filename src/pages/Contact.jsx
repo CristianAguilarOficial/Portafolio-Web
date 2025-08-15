@@ -69,8 +69,8 @@ function Contact() {
               </div>
             </div>
 
-            <div className="flex items-start">
-              <div className="bg-blue-100 p-3 rounded-full">
+            <div className="flex items-start ">
+              <div className="bg-blue-100 p-3 rounded-full ">
                 <Phone size={20} className="text-blue-600" />
               </div>
               <div className="ml-4">

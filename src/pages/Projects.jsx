@@ -14,8 +14,9 @@ function Projects() {
         'Web para subir notas o tareas almacenamiento en base de datos en tiempo real mongodb',
       image: tasKimg,
       tags: ['React', 'mongodb', 'node', 'Tailwind CSS'],
-      demoUrl: 'https://mi-frotend-basicweb-task-manager.vercel.app/',
-      codeUrl: 'https://github.com/CristianAguilarOficial/mi-frotend',
+      demoUrl: 'https://beta-notes-manager-not-backend.vercel.app/',
+      codeUrl:
+        'https://github.com/CristianAguilarOficial/Beta-NotesManager-NotBackend.git',
     },
     {
       id: 2,

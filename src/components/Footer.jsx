@@ -28,7 +28,7 @@ function Footer() {
               {currentYear}
             </p>
             <p className="text-gray-400 text-sm flex items-center">
-              ultima actualización: 10-05-2025
+              ultima actualización: 15-08-2025
             </p>
           </div>
         </div>
