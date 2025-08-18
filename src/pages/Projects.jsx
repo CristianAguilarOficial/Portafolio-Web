@@ -24,8 +24,9 @@ function Projects() {
       description: 'Web de control para gestionar gastos.',
       image: invimg,
       tags: ['React', 'Node', 'Mongodb', 'Tailwind CSS'],
-      demoUrl: 'https://front-contabilidad.vercel.app/',
-      codeUrl: 'https://github.com/CristianAguilarOficial/-front-contabilidad',
+      demoUrl: 'https://beta-contabilidad-not-backend.vercel.app/',
+      codeUrl:
+        'https://github.com/CristianAguilarOficial/Beta-Contabilidad-NotBackend.git',
     },
     {
       id: 3,
