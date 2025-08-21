@@ -1,13 +1,11 @@
 import ImagenHome from '../assets/img/imagen-home.png';
 import { motion } from 'framer-motion';
-import BannerSinBackend from '../components/BannerSinBackend';
 
 function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {' '}
       {/* min-h-screen para empujar el footer */}
-      <BannerSinBackend mensaje="CV no esta disponible por ahora por información personal " />
       <section className="py-20 px-6 max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -55,7 +53,7 @@ function Home() {
 
             <div className="flex mt-8 gap-6 justify-center md:justify-start">
               <a
-                href="/cv-cristian-aguilar.pdf"
+                href="../src/assets/CV-Cristian--Aguilar-Oficial.pdf"
                 download
                 className="bg-gray-400 text-gray-950 hover:bg-green-600 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white py-2 px-6 rounded-full transition duration-300"
               >
