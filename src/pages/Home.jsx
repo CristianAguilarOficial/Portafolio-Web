@@ -53,7 +53,7 @@ function Home() {
 
             <div className="flex mt-8 gap-6 justify-center md:justify-start">
               <a
-                href="../src/assets/CV-Cristian--Aguilar-Oficial.pdf"
+                href="CV_Cristian_Aguilar_Oficial.pdf"
                 download
                 className="bg-gray-400 text-gray-950 hover:bg-green-600 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white py-2 px-6 rounded-full transition duration-300"
               >
