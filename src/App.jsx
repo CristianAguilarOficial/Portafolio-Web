@@ -7,6 +7,9 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 
+// 👇 Importa Analytics de Vercel
+import { Analytics } from '@vercel/analytics/react';
+
 function App() {
   return (
     <ThemeProvider>
@@ -24,6 +27,8 @@ function App() {
               </Routes>
             </main>
             <Footer />
+            {/* 👇 Aquí insertas Analytics para que cuente visitas en todas las páginas */}
+            <Analytics />
           </div>
         </div>
       </Router>
